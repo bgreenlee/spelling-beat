@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Spelling Beat</title>
+    
+        <script src="spelling-beat.js"></script>
+        <link rel="stylesheet" href="bulma-min.css">
+        <!-- <link rel="stylesheet" href="pure-min.css"> -->
+        <!-- <link href="milligram.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Spelling Beat</h1>
+            <p class="subtitle">
+                For when you're desperate to solve <a href="https://www.nytimes.com/puzzles/spelling-bee">everyone's favorite spelling puzzle</a>.
+            </p>
+
+            <label class="label">Letters (required first)</label>
+            <div class="field has-addons">
+                <div class="control">
+                    <input class="input" type="text" id="letters" minlength="7" maxlength="7">
+                </div>
+                <div class="control">
+                    <a  class="button is-primary" onclick="solve()">Solve</a>
+                </div>
+            </div>
+
+            <div id="words"></div>
+        </div>
+    </section>
+    </body>
+</html>

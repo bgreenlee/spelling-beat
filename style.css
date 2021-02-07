@@ -1,0 +1,16 @@
+input#letters {
+    text-transform: uppercase;
+}
+
+#words {
+    columns: 3 auto;
+}
+
+#words ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+
+ul .pangram {
+    font-weight: bold;
+}
