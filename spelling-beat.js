@@ -32,7 +32,10 @@ function solve() {
         }
         wordsList.appendChild(item);
     }
-    document.getElementById("words").appendChild(wordsList);
+    let wordsDiv = document.getElementById("words");
+    wordsDiv.innerHTML = "";
+    wordsDiv.appendChild(wordsList);
+    window.location.hash = '#' + letters.toUpperCase();
 }
 
 window.onload = function() {
