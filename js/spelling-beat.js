@@ -31,7 +31,7 @@ function solve() {
         var item = document.createElement("li");
         item.textContent = word;
         if (pangrams.has(word)) {
-            item.setAttribute("class", "pangram");
+            item.setAttribute("class", "has-text-weight-bold");
         }
         wordsList.appendChild(item);
     }

@@ -7,18 +7,10 @@ div.words {
     column-count: 3;
 }
 
-@media (min-width: 40em) {
-    div.words { column-count: 4; }
-}​
+@media (min-width:40em) { div.words { column-count: 4; }}
+
+@media (min-width:50em) { div.words { column-count: 5; }}
 
 div.words ul { list-style: none; text-transform: capitalize; }
 
-@media (min-width: 50em) {
-    div.words { column-count: 5; }
-}​
-
-ul .pangram { font-weight: bold; }
-
-@media (prefers-color-scheme:dark) {
-    img.github-logo { filter: invert(100%); }
-}
+@media (prefers-color-scheme:dark) { img.github-logo { filter: invert(100%); }}
