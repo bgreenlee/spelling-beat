@@ -12,6 +12,9 @@ let filterPangrams = word => (new Set(word.split('')).size == 7);
 
 function solve() {
     let letters = document.getElementById("letters").value.toLowerCase();
+    if (!validLetters(letters)) {
+        return;
+    }
     var words = findWords(letters);
     // sort with pangrams first
     words.sort((a,b) => {
@@ -38,8 +41,12 @@ function solve() {
     window.location.hash = '#' + letters.toUpperCase();
 }
 
+function validLetters(letters) {
+    return letters.match(/^[a-z]{7}$/i);
+}
+
 function updateSolveButton() {
-    if (document.getElementById("letters").value.match(/^[a-z]{7}$/i)) {
+    if (validLetters(document.getElementById("letters").value)) {
         document.getElementById("solve-button").removeAttribute("disabled");
     } else {
         document.getElementById("solve-button").setAttribute("disabled", "true");
