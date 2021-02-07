@@ -38,9 +38,32 @@ function solve() {
     window.location.hash = '#' + letters.toUpperCase();
 }
 
+function updateSolveButton() {
+    if (document.getElementById("letters").value.match(/^[a-z]{7}$/i)) {
+        document.getElementById("solve-button").removeAttribute("disabled");
+    } else {
+        document.getElementById("solve-button").setAttribute("disabled", "true");
+    }
+}
+
 window.onload = function() {
+    let lettersInput = document.getElementById("letters");
+    let solveButton = document.getElementById("solve-button");
+    
     if (window.location.hash && window.location.hash.length == 8) {
-        document.getElementById("letters").value = window.location.hash.substring(1);
+        lettersInput.value = window.location.hash.substring(1);
         solve();
     }
+
+    lettersInput.addEventListener("keyup", event => {
+        if (event.keyCode === 13) {
+            solve();
+        }
+    });
+
+    lettersInput.addEventListener("input", event => {
+        updateSolveButton();
+    });
+
+    updateSolveButton();
 };
