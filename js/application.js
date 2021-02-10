@@ -62,7 +62,6 @@ window.onload = function() {
     // check for letters in the url
     if (window.location.hash && window.location.hash.length == 8) {
         lettersInput.value = window.location.hash.substring(1);
-        solve();
     }
 
     lettersInput.addEventListener("input", checkForValidInput);
