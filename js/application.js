@@ -65,12 +65,6 @@ window.onload = function() {
         solve();
     }
 
-    lettersInput.addEventListener("keyup", event => {
-        if (event.keyCode === 13) {
-            solve();
-        }
-    });
-
     lettersInput.addEventListener("input", checkForValidInput);
 
     checkForValidInput();
