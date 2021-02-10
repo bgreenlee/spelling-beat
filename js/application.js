@@ -8,14 +8,13 @@ function findWords(letters) {
     return words.filter(word => word.match(regex));
 }
 
-let isPangram = word => (new Set(word.split('')).size == 7);
-
 function solve() {
     let letters = document.getElementById("letters").value.toLowerCase();
     if (!validLetters(letters)) {
         return;
     }
     var words = findWords(letters);
+    let isPangram = word => (new Set(word.split('')).size == 7);
     // sort with pangrams first
     words.sort((a,b) => {
         let aIsPangram = isPangram(a);
