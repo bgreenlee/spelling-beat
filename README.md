@@ -6,7 +6,7 @@ Serverless Solver for [everyone's favorite spelling puzzle](https://www.nytimes.
 
 ## Development
 
-No setup required. Just open <index.html> in your browser. If you want to run it from a server, one easy way is with python:
+No setup required. Just open [index.html](index.html) in your browser. If you want to run it from a server, one easy way is with python:
 
 ```
 python3 -m http.server # or SimpleHTTPServer for python2
@@ -24,7 +24,7 @@ grep -E '^[a-z]{4,}$' /usr/share/dict/words \
   | tr '\n' ' ' > words-filtered
 ```
 
-The first line filters out proper nouns and words less than four characters. The second removes any words that have more than 7 unique letters. And the last just puts them all on one line, space-separated. This can then be pasted directly in to <application.js>.
+The first line filters out proper nouns and words less than four characters. The second removes any words that have more than 7 unique letters. And the last just puts them all on one line, space-separated. This can then be pasted directly in to [application.js](js/application.js).
 
 ## Legalese
 
