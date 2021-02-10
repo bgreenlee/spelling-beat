@@ -35,28 +35,31 @@ function solve() {
         }
         wordsList.appendChild(item);
     }
-    let wordsDiv = document.getElementById("words");
-    wordsDiv.innerHTML = "";
-    wordsDiv.appendChild(wordsList);
+    clearWords();
+    document.getElementById("words").appendChild(wordsList);
     window.location.hash = '#' + letters.toUpperCase();
+}
+
+function clearWords() {
+    document.getElementById("words").innerHTML = "";
 }
 
 function validLetters(letters) {
     return letters.match(/^[a-z]{7}$/i);
 }
 
-function updateSolveButton() {
+function checkForValidInput() {
     if (validLetters(document.getElementById("letters").value)) {
-        document.getElementById("solve-button").removeAttribute("disabled");
+        solve();
     } else {
-        document.getElementById("solve-button").setAttribute("disabled", "true");
+        clearWords();
     }
 }
 
 window.onload = function() {
     let lettersInput = document.getElementById("letters");
-    let solveButton = document.getElementById("solve-button");
     
+    // check for letters in the url
     if (window.location.hash && window.location.hash.length == 8) {
         lettersInput.value = window.location.hash.substring(1);
         solve();
@@ -68,9 +71,7 @@ window.onload = function() {
         }
     });
 
-    lettersInput.addEventListener("input", event => {
-        updateSolveButton();
-    });
+    lettersInput.addEventListener("input", checkForValidInput);
 
-    updateSolveButton();
+    checkForValidInput();
 };
