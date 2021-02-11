@@ -7,6 +7,10 @@ div.words {
     column-count: 3;
 }
 
+@media (max-width:600px) {
+    .logo { width: 32px; }
+    .github-logo { width: 16px; }
+}
 @media (min-width:40em) { div.words { column-count: 4; }}
 
 @media (min-width:50em) { div.words { column-count: 5; }}
