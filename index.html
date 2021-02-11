@@ -1,62 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Spelling Beat</title>
-    
-        <script src="js/application.js"></script>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spelling Beat</title>
 
-        <!-- Favicons -->
-        <link rel="icon" href="images/favicon-32.png" sizes="32x32">
-        <link rel="icon" href="images/favicon-128.png" sizes="128x128">
-        <link rel="icon" href="images/favicon-192.png" sizes="192x192">
-        <!-- iOS -->
-        <link rel="apple-touch-icon" href="images/favicon-152.png" sizes="152x152">
-        <link rel="apple-touch-icon" href="images/favicon-167.png" sizes="167x167">
-        <link rel="apple-touch-icon" href="images/favicon-180.png" sizes="180x180">
-        <!-- Android -->
-        <link rel="shortcut icon" sizes="196x196" href="images/favicon-196.png">
-    </head>
-    <body>
+    <script src="js/application.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
-        <section class="section">
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="images/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="images/favicon-192.png" sizes="192x192">
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="images/favicon-152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="images/favicon-167.png" sizes="167x167">
+    <link rel="apple-touch-icon" href="images/favicon-180.png" sizes="180x180">
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href="images/favicon-196.png">
+</head>
 
-            <div class="is-pulled-right">
-                <a href="https://github.com/bgreenlee/spelling-beat">
-                    <img src="images/github.svg" class="github-logo" alt="github" width="32" height="32">
-                </a>
+<body>
+    <section class="section">
+        <div class="is-pulled-right">
+            <a href="https://github.com/bgreenlee/spelling-beat">
+                <img src="images/github.svg" class="github-logo" alt="github" width="32" height="32">
+            </a>
+        </div>
+
+        <div class="columns is-mobile">
+            <div class="column is-narrow">
+                <div class="is-pulled-left">
+                    <img src="images/bee-logo-128.png" class="logo" alt="bee logo" width="64">
+                </div>
             </div>
 
-            <div class="columns is-mobile">
-                <div class="column is-narrow">
-                    <div class="is-pulled-left">
-                        <img src="images/bee-logo-128.png" class="logo" alt="bee logo" width="64">
+            <div class="column">
+                <h1 class="title">Spelling Beat</h1>
+                <p class="subtitle">
+                    For when you're desperate to solve <a href="https://www.nytimes.com/puzzles/spelling-bee">everyone's
+                        favorite spelling puzzle</a>.
+                </p>
+
+                <label class="label">Letters (required first)</label>
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" id="letters" minlength="7" maxlength="7" autocomplete="off"
+                            autocorrect="off" autocapitalize="off" spellcheck="false">
                     </div>
                 </div>
-        
-                <div class="column">
-                    <h1 class="title">Spelling Beat</h1>
-                    <p class="subtitle">
-                    For when you're desperate to solve <a href="https://www.nytimes.com/puzzles/spelling-bee">everyone's favorite spelling puzzle</a>.
-                    </p> 
 
-
-                        <label class="label">Letters (required first)</label>
-                        <div class="field has-addons">
-                            <div class="control">
-                                <input class="input" type="text" id="letters" minlength="7" maxlength="7" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                            </div>
-                        </div>
-        
-                        <div id="words" class="words"></div>
-        
-                </div>
+                <div id="words" class="words"></div>
             </div>
-
-
-
+        </div>
     </section>
-    </body>
+</body>
 </html>
