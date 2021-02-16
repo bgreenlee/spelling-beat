@@ -1,19 +1,16 @@
-.SILENT: update-words
+.SILENT: words
 SHELL=/bin/bash
-DICT=/usr/share/dict/words
+DICT=/usr/local/share/dict
 
-update-words:
+words:
 	# remove proper nouns and words shorter than 4 letters,
 	# remove words with more than 7 different letters,
-	# add in the include words,
 	# remove the exclude words,
 	# resort it,
 	# put it all on one line,
-	# and finally update application.js
+	# and output it to words-filtered
 	grep -E '^[a-z]{4,}$$' $(DICT) | \
 		awk '{ split($$0, a, ""); delete h; for (i=1;i<=length(a);i++) h[a[i]]=1; if (length(h) < 8) print }' | \
-		cat include-words - | \
-		sed -e "$$(sed 's:.*:s/&//ig:' exclude-words)" | \
+		diff -w -y --suppress-common-lines - exclude-words | cut -f 1 | \
 		sort | \
-		tr -s '\n' ' ' | \
-		perl -0pe "s/const words = \`.*?\`/const words = \`\n`cat`\n\`/sg" -i js/application.js
+		tr -s '\n' ' ' > words-filtered
