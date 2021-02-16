@@ -30,4 +30,4 @@ This will filter the dictionary, removing proper nouns, words shorter than 4 cha
 
 This code © 2021 by Brad Greenlee. Released under the [MIT license](LICENSE).
 
-NASPA Word List 2020 Edition © NASPA 2020. The copy included in this app is licensed for personal use. You may not use it for any commercial purposes.
+[NASPA Word List 2020 Edition](http:/www.scrabbleplayers.org) © NASPA 2020. The copy included in this app is licensed for personal use. You may not use it for any commercial purposes.
