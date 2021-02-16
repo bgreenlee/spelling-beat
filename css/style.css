@@ -34,7 +34,7 @@ div.words ul { list-style: none; text-transform: capitalize; }
 
 footer {
     font-size: small;
-    opacity: 50%;
+    opacity: 80%;
     flex-shrink: 0;
     padding: 1em 4em;
 }
