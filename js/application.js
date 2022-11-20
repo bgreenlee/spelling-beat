@@ -46,7 +46,7 @@ function clearWords() {
 }
 
 function validLetters(letters) {
-    return letters.match(/^[a-z]{7}$/i);
+    return letters.match(/^[a-rt-z]{7}$/i); // s is never used
 }
 
 function checkForValidInput() {
