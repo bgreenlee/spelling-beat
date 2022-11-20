@@ -11,6 +11,6 @@ words:
 	# and output it to words-filtered
 	grep -E '^[a-z]{4,}$$' $(DICT) | \
 		awk '{ split($$0, a, ""); delete h; for (i=1;i<=length(a);i++) h[a[i]]=1; if (length(h) < 8) print }' | \
-		diff -w -y --suppress-common-lines - exclude-words | cut -f 1 | \
+		diff -w -y --suppress-common-lines - data/exclude-words | cut -f 1 | \
 		sort | \
-		tr -s '\n' ' ' > words-filtered
+		tr -s '\n' ' ' > data/words-filtered
