@@ -4,14 +4,15 @@ DICT?=/usr/local/share/dict
 
 words:
 	# remove proper nouns and words shorter than 4 letters,
+	# remove any words with an 's'
 	# remove words with more than 7 different letters,
-	# remove the exclude words,
 	# resort it,
+	# remove the exclude words,
 	# put it all on one line,
 	# and output it to words-filtered
 	grep -E '^[a-z]{4,}$$' $(DICT) | \
 	    grep -v s | \
 		awk '{ split($$0, a, ""); delete h; for (i=1;i<=length(a);i++) h[a[i]]=1; if (length(h) < 8) print }' | \
-		grep -v -f data/exclude-words | \
 		sort | \
+		comm -23 - data/exclude-words | \
 		tr -s '\n' ' ' > data/words-filtered
