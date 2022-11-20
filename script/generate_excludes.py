@@ -9,7 +9,7 @@ def main(answers_file, exclude_words_file, word_list_file):
 
     with open(answers_file) as f:
         answers_log = f.readlines()
-    
+
     all_excludes = set()
     for line in answers_log:
         date, letters, answers = line.strip().split(" ")
@@ -19,7 +19,7 @@ def main(answers_file, exclude_words_file, word_list_file):
         all_excludes = all_excludes | excluded
         # print(letters, ':', excluded)
 
-    print(all_excludes)
+    print("\n".join(sorted(all_excludes)))
 
 
 def solve(letters, words):
