@@ -46,7 +46,9 @@ function clearWords() {
 }
 
 function validLetters(letters) {
-    return letters.match(/^[a-rt-z]{7}$/i); // s is never used
+    let letterSet = new Set(letters);
+    let uniqueLetters = [...letterSet].join("")
+    return uniqueLetters.match(/^[a-rt-z]{7}$/i); // s is never used
 }
 
 function checkForValidInput() {
