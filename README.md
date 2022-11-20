@@ -21,10 +21,10 @@ Since the Spelling Bee editors manually remove obscure or offensive words from t
 To update the word list, run:
 
 ```
-make update-words
+make words
 ```
 
-This will filter the dictionary, removing proper nouns, words shorter than 4 characters, and words having more than 7 distinct letters, and remove words in the exclude-words list. Then copy the contents of `words-filtered` into [line 4 of application.js](js/application.js#L4).
+This will filter the dictionary, removing proper nouns, words shorter than 4 characters, words with an "s", and words having more than 7 distinct letters, and remove words in the exclude-words list. Then copy the contents of `words-filtered` into [line 4 of application.js](js/application.js#L4).
 
 ## Legalese
 

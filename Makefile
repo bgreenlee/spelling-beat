@@ -1,6 +1,6 @@
 .SILENT: words
 SHELL=/bin/bash
-DICT?=/usr/local/share/dict
+DICT?=/usr/share/dict/words
 
 words:
 	# remove proper nouns and words shorter than 4 letters,
