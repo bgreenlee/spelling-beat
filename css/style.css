@@ -12,7 +12,7 @@ body {
 
 input#letters { text-transform: uppercase; }
 
-div.words { 
+div.words {
     column-count: 3;
 }
 
@@ -25,6 +25,8 @@ div.words {
 @media (min-width:50em) { div.words { column-count: 5; }}
 
 div.words ul { list-style: none; text-transform: capitalize; }
+
+div.score { padding-top: 1em; }
 
 @media (prefers-color-scheme:dark) { img.github-logo { filter: invert(100%); }}
 

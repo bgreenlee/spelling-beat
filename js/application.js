@@ -36,13 +36,21 @@ function solve() {
         }
         wordsList.appendChild(item);
     }
-    clearWords();
+    clearPage();
     document.getElementById("words").appendChild(wordsList);
     window.location.hash = '#' + letters.toUpperCase();
+
+    // print total score
+    let totalScore = words.reduce((acc, word) => acc + (word.length == 4 ? 1 : pangrams.has(word) ? word.length + 7 : word.length), 0);
+    document.getElementById("score").innerHTML = "<b>Total score: </b>" + totalScore;
 }
 
-function clearWords() {
-    document.getElementById("words").innerHTML = "";
+function clearPage() {
+    for (const id of ["words", "score"]) {
+        document.getElementById(id).innerHTML = "";
+    }
+    // remove hash completely; just setting window.location.hash = "" leaves the #
+    history.pushState("", document.title, window.location.pathname + window.location.search);
 }
 
 function validLetters(letters) {
@@ -55,7 +63,7 @@ function checkForValidInput() {
     if (validLetters(document.getElementById("letters").value)) {
         solve();
     } else {
-        clearWords();
+        clearPage();
     }
 }
 
